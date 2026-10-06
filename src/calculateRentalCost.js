@@ -3,14 +3,22 @@
  *
  * @return {number}
  */
+
+const DAILY_RATE = 40;
+const LONG_TERM = 7;
+const LONG_TERM_DISCOUNT = 50;
+const SHORT_TERM = 3;
+const SHORT_TERM_DISCOUNT = 20;
+
 function calculateRentalCost(days) {
   // write code here
-  let cost = days * 40;
 
-  if (days >= 7) {
-    cost -= 50;
-  } else if (days >= 3) {
-    cost -= 20;
+  let cost = days * DAILY_RATE;
+
+  if (days >= LONG_TERM) {
+    cost -= LONG_TERM_DISCOUNT;
+  } else if (days >= SHORT_TERM) {
+    cost -= SHORT_TERM_DISCOUNT;
   }
 
   return cost;
